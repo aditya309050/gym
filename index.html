@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en" class="lenis">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phive — It's not just fitness. It's living fully</title>
+    <meta name="description" content="Discover Phive health and fitness clubs in Lisbon, Porto, Coimbra, and Leiria. High performance gym, private Pilates, nutrition, and wellness." />
+    <link rel="icon" type="image/png" href="/images/phive_asset_0.png" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Custom Inverted Dynamic Cursor -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Background Audio Element -->
+    <audio id="ambient-audio" src="/audio/phive-clubs.mp3" preload="auto" loop></audio>
+
+    <!-- Main Navigation Header -->
+    <header id="site-header" class="site-header">
+      <div class="nav-left">
+        <a href="#hero" class="brand-logo" id="logo-btn">
+          PHIVE<span class="dot"></span>
+        </a>
+        <button id="sound-toggle" class="sound-toggle" aria-label="Toggle Sound">
+          <div class="bars">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span id="sound-label">Sound Off</span>
+        </button>
+      </div>
+
+      <div class="nav-right">
+        <button id="header-visit-btn" class="btn-round yellow">
+          Schedule a visit
+        </button>
+        <button id="burger-btn" class="burger-btn" aria-label="Open Navigation Menu">
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Fullscreen Menu Drawer -->
+    <nav id="menu-drawer" class="menu-drawer">
+      <div class="drawer-grid">
+        <div class="main-links">
+          <a href="#clubs" class="nav-item drawer-link" data-target="clubs">Clubs</a>
+          <a href="#classes" class="nav-item drawer-link" data-target="classes">Classes</a>
+          <a href="#fitness-hub" class="nav-item drawer-link" data-target="fitness-hub">Fitness Hub</a>
+          <a href="#facilities" class="nav-item drawer-link" data-target="facilities">Facilities</a>
+          <a href="#timetable" class="nav-item drawer-link" data-target="timetable">Timetable</a>
+          <a href="#app-section" class="nav-item drawer-link" data-target="app-section">Phive App</a>
+        </div>
+
+        <div class="sub-section">
+          <span class="-label-1 sub-title">Our Locations</span>
+          <div class="club-links">
+            <a href="#clubs" class="club-link drawer-link" data-club="lisbon">
+              <span>Club 5 de Outubro</span>
+              <span class="-label-2">Lisbon</span>
+            </a>
+            <a href="#clubs" class="club-link drawer-link" data-club="porto">
+              <span>Club Boavista</span>
+              <span class="-label-2">Porto</span>
+            </a>
+            <a href="#clubs" class="club-link drawer-link" data-club="celas">
+              <span>Club Coimbra Celas</span>
+              <span class="-label-2">Coimbra</span>
+            </a>
+            <a href="#clubs" class="club-link drawer-link" data-club="lagrimas">
+              <span>Club Coimbra Lágrimas</span>
+              <span class="-label-2">Coimbra</span>
+            </a>
+            <a href="#clubs" class="club-link drawer-link" data-club="leiria">
+              <span>Club Leiria</span>
+              <span class="-label-2">Leiria</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 16px;">
+            <button id="drawer-visit-btn" class="btn-round yellow" style="width: 100%;">
+              Book a Tour Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <div class="social-list">
+          <a href="https://instagram.com/phiveclubs" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://facebook.com/phiveclubs" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+          <a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+        </div>
+        <div class="-label-2" style="color: rgba(243, 239, 215, 0.4);">
+          EN / PT — 2025 BÜRO DIGITAL EXPERIENCE
+        </div>
+      </div>
+    </nav>
+
+    <!-- Scrollable Body Content -->
+    <div id="scroll-wrapper">
+      <!-- HERO SECTION -->
+      <section id="hero" class="hero-section">
+        <div class="hero-video-wrapper">
+          <video autoplay loop muted playsinline poster="/images/phive_asset_1.jpg">
+            <source src="/videos/hero-clubs.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <div class="hero-meta-row">
+            <div class="hero-badge -label-1">
+              Coimbra, Leiria, Lisbon and Porto
+            </div>
+            <div class="hero-hours">
+              Train every day from 06:30am to 10pm
+            </div>
+          </div>
+
+          <div class="hero-title-group">
+            <h1 class="-title-1 hero-main-title">TRAIN EVERY DAY</h1>
+            <div class="-manuscript-2 hero-script-tagline">It's not just fitness. It's living fully</div>
+          </div>
+
+          <div class="hero-actions">
+            <button id="hero-join-btn" class="btn-round yellow">
+              Join Phive
+            </button>
+            <a href="#clubs" class="btn-round secondary" style="color: var(--color-white); border-color: rgba(255,255,255,0.4);">
+              Explore Clubs ↓
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TICKER MARQUEE RIBBON -->
+      <section class="ticker-ribbon">
+        <div class="ticker-track">
+          <div class="ticker-item">
+            <span>TRAIN EVERY DAY</span><span class="symbol">★</span>
+            <span>LISBON</span><span class="symbol">•</span>
+            <span>PORTO</span><span class="symbol">•</span>
+            <span>COIMBRA</span><span class="symbol">•</span>
+            <span>LEIRIA</span><span class="symbol">★</span>
+            <span>FROM 06:30AM TO 10PM</span><span class="symbol">★</span>
+            <span>IT'S LIVING FULLY</span><span class="symbol">★</span>
+          </div>
+          <div class="ticker-item">
+            <span>TRAIN EVERY DAY</span><span class="symbol">★</span>
+            <span>LISBON</span><span class="symbol">•</span>
+            <span>PORTO</span><span class="symbol">•</span>
+            <span>COIMBRA</span><span class="symbol">•</span>
+            <span>LEIRIA</span><span class="symbol">★</span>
+            <span>FROM 06:30AM TO 10PM</span><span class="symbol">★</span>
+            <span>IT'S LIVING FULLY</span><span class="symbol">★</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLUBS CAROUSEL SHOWCASE -->
+      <section id="clubs" class="clubs-section">
+        <div class="section-container">
+          <div class="clubs-intro">
+            <div class="-label-1 category-tag">Our Network</div>
+            <h2 class="-title-3 intro-text">
+              Step into a unique journey in a modern, welcoming space, guided by the best to help you reach your full potential.
+            </h2>
+          </div>
+        </div>
+
+        <div class="clubs-carousel-wrapper">
+          <div id="clubs-track" class="clubs-cards-track">
+            <!-- Club 1: Lisbon -->
+            <div class="club-card" data-club-id="lisbon">
+              <div class="img-box">
+                <img src="/images/phive_asset_2.jpg" alt="Phive Club 5 de Outubro Lisbon" />
+                <div class="badge-overlay -label-2">Lisbon Flagship</div>
+              </div>
+              <div class="card-body">
+                <h3 class="-title-5 club-name">Club 5 de Outubro</h3>
+                <div class="club-meta -body-1">
+                  <span>Av. 5 de Outubro, 198 — Lisbon</span>
+                  <span>Mon - Fri: 06:30 - 22:00 | Sat - Sun: 08:30 - 20:00</span>
+                </div>
+                <div class="amenities-tags">
+                  <span class="amenity-pill">Eleiko Strength</span>
+                  <span class="amenity-pill">Pilates Studio</span>
+                  <span class="amenity-pill">Sauna & Spa</span>
+                  <span class="amenity-pill">Hydro Pool</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Club 2: Porto -->
+            <div class="club-card" data-club-id="porto">
+              <div class="img-box">
+                <img src="/images/phive_asset_3.jpg" alt="Phive Club Boavista Porto" />
+                <div class="badge-overlay -label-2">Porto Prime</div>
+              </div>
+              <div class="card-body">
+                <h3 class="-title-5 club-name">Club Boavista</h3>
+                <div class="club-meta -body-1">
+                  <span>Avenida da Boavista, Porto</span>
+                  <span>Mon - Fri: 06:30 - 22:00 | Sat - Sun: 08:30 - 20:00</span>
+                </div>
+                <div class="amenities-tags">
+                  <span class="amenity-pill">Technogym Pure</span>
+                  <span class="amenity-pill">Recovery Lounge</span>
+                  <span class="amenity-pill">Cycle Theater</span>
+                  <span class="amenity-pill">Physio</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Club 3: Coimbra Celas -->
+            <div class="club-card" data-club-id="celas">
+              <div class="img-box">
+                <img src="/images/phive_asset_4.jpg" alt="Phive Club Coimbra Celas" />
+                <div class="badge-overlay -label-2">Coimbra Urban</div>
+              </div>
+              <div class="card-body">
+                <h3 class="-title-5 club-name">Club Coimbra Celas</h3>
+                <div class="club-meta -body-1">
+                  <span>Rua Bernardo de Albuquerque, Coimbra</span>
+                  <span>Mon - Fri: 07:00 - 22:00 | Sat - Sun: 09:00 - 19:00</span>
+                </div>
+                <div class="amenities-tags">
+                  <span class="amenity-pill">High-Performance Turf</span>
+                  <span class="amenity-pill">Combat Arena</span>
+                  <span class="amenity-pill">CrossFit</span>
+                  <span class="amenity-pill">Nutrition</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Club 4: Coimbra Lágrimas -->
+            <div class="club-card" data-club-id="lagrimas">
+              <div class="img-box">
+                <img src="/images/phive_asset_5.jpg" alt="Phive Club Coimbra Lágrimas" />
+                <div class="badge-overlay -label-2">Health Club & Spa</div>
+              </div>
+              <div class="card-body">
+                <h3 class="-title-5 club-name">Club Coimbra Lágrimas</h3>
+                <div class="club-meta -body-1">
+                  <span>Quinta das Lágrimas, Coimbra</span>
+                  <span>Mon - Fri: 06:30 - 22:00 | Sat - Sun: 08:30 - 20:00</span>
+                </div>
+                <div class="amenities-tags">
+                  <span class="amenity-pill">Olympic 25m Pool</span>
+                  <span class="amenity-pill">Thermal Springs</span>
+                  <span class="amenity-pill">Zen Garden</span>
+                  <span class="amenity-pill">Pilates Reformer</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Club 5: Leiria -->
+            <div class="club-card" data-club-id="leiria">
+              <div class="img-box">
+                <img src="/images/phive_asset_6.jpg" alt="Phive Club Leiria" />
+                <div class="badge-overlay -label-2">Central Health Hub</div>
+              </div>
+              <div class="card-body">
+                <h3 class="-title-5 club-name">Club Leiria</h3>
+                <div class="club-meta -body-1">
+                  <span>Zona Desportiva, Leiria</span>
+                  <span>Mon - Fri: 06:30 - 22:00 | Sat - Sun: 08:30 - 19:00</span>
+                </div>
+                <div class="amenities-tags">
+                  <span class="amenity-pill">Athletic Track</span>
+                  <span class="amenity-pill">Hydro-gym</span>
+                  <span class="amenity-pill">Personal Training</span>
+                  <span class="amenity-pill">Phive Kids</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-scrollbar-container" id="carousel-track-bar">
+            <div class="carousel-scrollbar-thumb" id="carousel-thumb"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT YOU CAN FIND (FACILITIES MOSAIC) -->
+      <section id="facilities" class="mosaic-section">
+        <div class="section-container">
+          <div class="mosaic-header">
+            <div class="-label-1" style="color: var(--color-subduedYellow); margin-bottom: 8px;">Facilities & Spaces</div>
+            <h2 class="-title-3">What you can find at Phive Clubs</h2>
+          </div>
+
+          <div class="mosaic-grid">
+            <div class="mosaic-card span-7">
+              <img src="/images/phive_asset_7.jpg" alt="Free Weights Arena" />
+              <div class="card-content">
+                <span class="number">01 / STRENGTH</span>
+                <h3 class="-title-5 title">Free Weights & Elite Performance Arena</h3>
+                <p class="-body-1 desc">Custom Eleiko competition plates, Olympic platforms, and biomechanically calibrated Technogym stations.</p>
+              </div>
+            </div>
+
+            <div class="mosaic-card span-5">
+              <img src="/images/phive_asset_8.jpg" alt="Private Pilates Reformer Studio" />
+              <div class="card-content">
+                <span class="number">02 / PILATES</span>
+                <h3 class="-title-5 title">Private Reformer & Cadillac Studio</h3>
+                <p class="-body-1 desc">Individualized posture correction and core alignment in a quiet, dedicated boutique studio.</p>
+              </div>
+            </div>
+
+            <div class="mosaic-card span-4">
+              <img src="/images/phive_asset_9.jpg" alt="Heated Hydrotherapy Pool" />
+              <div class="card-content">
+                <span class="number">03 / AQUATICS</span>
+                <h3 class="-title-5 title">Heated Hydro Pool</h3>
+                <p class="-body-1 desc">Low-impact aquatic conditioning, swimming lanes, and guided water-based recovery.</p>
+              </div>
+            </div>
+
+            <div class="mosaic-card span-8">
+              <img src="/images/phive_asset_10.jpg" alt="Thermal Spa and Sauna" />
+              <div class="card-content">
+                <span class="number">04 / RECOVERY</span>
+                <h3 class="-title-5 title">Thermal Spa, Finnish Sauna & Cryo Recovery</h3>
+                <p class="-body-1 desc">Deep muscular restoration, contrast hydrotherapy, and dry heat protocols for optimal post-workout regeneration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLASSES SHOWCASE -->
+      <section id="classes" class="classes-section">
+        <div class="section-container">
+          <div class="classes-header">
+            <div>
+              <div class="-label-1" style="margin-bottom: 8px;">Studio Programming</div>
+              <h2 class="-title-3">70+ Classes Every Week</h2>
+            </div>
+
+            <!-- Filter Pills -->
+            <div class="filter-pills" id="studio-filters">
+              <button class="filter-btn active" data-filter="all">All Studios</button>
+              <button class="filter-btn" data-filter="power">Power</button>
+              <button class="filter-btn" data-filter="flow">Flow</button>
+              <button class="filter-btn" data-filter="ride">Ride</button>
+              <button class="filter-btn" data-filter="moves">Moves</button>
+              <button class="filter-btn" data-filter="aqua">Aqua</button>
+              <button class="filter-btn" data-filter="kids">Kids</button>
+            </div>
+          </div>
+
+          <div class="classes-grid" id="classes-container">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- FITNESS HUB: 4 PILLARS -->
+      <section id="fitness-hub" class="fitness-hub-section">
+        <div class="section-container">
+          <div style="margin-bottom: 32px;">
+            <div class="-label-1" style="color: var(--color-subduedYellow); margin-bottom: 8px;">Multidisciplinary Ecosystem</div>
+            <h2 class="-title-3">Fitness Hub</h2>
+          </div>
+
+          <div class="hub-tabs" id="hub-tabs">
+            <button class="hub-tab-btn active" data-pillar="coach">Phive Coach™</button>
+            <button class="hub-tab-btn" data-pillar="physio">Phive Physio™</button>
+            <button class="hub-tab-btn" data-pillar="nutri">Phive Nutri™</button>
+            <button class="hub-tab-btn" data-pillar="pilates">Phive Pilates™</button>
+          </div>
+
+          <div class="hub-display-panel" id="hub-panel">
+            <div class="panel-img">
+              <img id="hub-img" src="/images/phive_asset_11.jpg" alt="Phive Coach" />
+            </div>
+            <div class="panel-info">
+              <span class="-label-1" id="hub-subtitle" style="color: var(--color-yellow);">Personal Training & Performance</span>
+              <h3 class="-title-4 pillar-title" id="hub-title">Phive Coach™</h3>
+              <p class="-body-2" id="hub-desc" style="color: rgba(243, 239, 215, 0.85);">
+                Whatever your goal may be — maximizing athletic performance, body recomposition, recovering from previous injuries, or enhancing day-to-day vitality — you will succeed faster with dedicated 1-on-1 coaching. Our certified specialists formulate a safe, challenging, and progressively monitored workout regimen tailored strictly to your physiology.
+              </p>
+
+              <div class="benefit-list" id="hub-benefits">
+                <div class="benefit-item">
+                  <span class="dot"></span>
+                  <span class="-body-1">Biomechanical movement assessment</span>
+                </div>
+                <div class="benefit-item">
+                  <span class="dot"></span>
+                  <span class="-body-1">Custom progressive overload schedule</span>
+                </div>
+                <div class="benefit-item">
+                  <span class="dot"></span>
+                  <span class="-body-1">Weekly strength and mobility testing</span>
+                </div>
+                <div class="benefit-item">
+                  <span class="dot"></span>
+                  <span class="-body-1">Direct trainer accountability & app check-ins</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 16px;">
+                <button class="btn-round yellow open-visit-modal-btn">
+                  Consult With a Coach
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIMETABLE SCHEDULE SECTION -->
+      <section id="timetable" class="timetable-section">
+        <div class="section-container">
+          <div class="timetable-header">
+            <div>
+              <div class="-label-1" style="margin-bottom: 8px;">Live Club Calendar</div>
+              <h2 class="-title-3">Weekly Timetable</h2>
+            </div>
+            <div class="-body-1" style="color: rgba(22, 16, 3, 0.7);">
+              Select your club location to view live studio sessions
+            </div>
+          </div>
+
+          <div class="day-selector" id="day-selector">
+            <button class="day-btn active" data-day="Mon">Monday</button>
+            <button class="day-btn" data-day="Tue">Tuesday</button>
+            <button class="day-btn" data-day="Wed">Wednesday</button>
+            <button class="day-btn" data-day="Thu">Thursday</button>
+            <button class="day-btn" data-day="Fri">Friday</button>
+            <button class="day-btn" data-day="Sat">Saturday</button>
+            <button class="day-btn" data-day="Sun">Sunday</button>
+          </div>
+
+          <div class="schedule-table" id="schedule-table-container">
+            <!-- Schedule rows populated via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- PHIVE MOBILE APP SECTION -->
+      <section id="app-section" class="app-section">
+        <div class="section-container">
+          <div class="app-wrapper">
+            <div class="app-info">
+              <span class="-label-1" style="color: var(--color-subduedYellow);">Digital Experience</span>
+              <h2 class="-title-3">Your Entire Club in Your Pocket</h2>
+              <p class="-body-2" style="color: rgba(243, 239, 215, 0.8);">
+                Download the official Phive App. Book group studio classes instantly, check live club occupancy before you arrive, open turnstile gates contactless, track biometric data, and chat directly with your assigned personal coach and nutritionist.
+              </p>
+
+              <div class="app-badges">
+                <button class="btn-round yellow" onclick="alert('Redirecting to iOS App Store...');">
+                  App Store (iOS)
+                </button>
+                <button class="btn-round secondary" style="color: var(--color-white); border-color: rgba(255,255,255,0.3);" onclick="alert('Redirecting to Google Play...');">
+                  Google Play (Android)
+                </button>
+              </div>
+            </div>
+
+            <div class="app-mockup">
+              <div class="app-mockup-frame">
+                <img src="/images/phive_asset_12.jpg" alt="Phive App Mobile Interface" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BRAND MANIFESTO -->
+      <section id="manifesto" style="background: var(--color-warmYellow); padding: clamp(80px, 60px + 100vw * 0.04, 160px) 0; text-align: center;">
+        <div class="section-container" style="max-width: 980px;">
+          <span class="-manuscript-1" style="color: var(--color-darkBrown); display: block; margin-bottom: 20px;">
+            A space built for excellence
+          </span>
+          <h2 class="-title-2" style="color: var(--color-darkBrown); margin-bottom: 32px;">
+            It's not just fitness. It's living fully.
+          </h2>
+          <p class="-body-2" style="color: var(--color-darkBrown); max-width: 680px; margin: 0 auto 36px; line-height: 1.6;">
+            We believe that physical health is the foundational pillar for every accomplishment in life. At Phive, we combine cutting-edge sports science, serene architectural comfort, and world-class professionals to elevate you beyond standard routines.
+          </p>
+          <button class="btn-round yellow open-visit-modal-btn" style="background-color: var(--color-darkBrown); color: var(--color-yellow);">
+            Start Your Journey Today
+          </button>
+        </div>
+      </section>
+
+      <!-- SITE FOOTER -->
+      <footer id="footer" class="site-footer">
+        <div class="section-container">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <a href="#hero" class="brand-logo" style="color: var(--color-white);">
+                PHIVE<span class="dot"></span>
+              </a>
+              <p class="-body-1" style="color: rgba(243, 239, 215, 0.6); max-width: 320px;">
+                Premier health, wellness, and performance clubs located in Lisbon, Porto, Coimbra, and Leiria.
+              </p>
+              <div class="-body-1" style="color: var(--color-yellow); margin-top: 10px;">
+                from 06:30am to 10pm — Train every day.
+              </div>
+            </div>
+
+            <div class="footer-links-col">
+              <span class="-label-1 col-heading">Clubs</span>
+              <a href="#clubs">Lisbon (5 de Outubro)</a>
+              <a href="#clubs">Porto (Boavista)</a>
+              <a href="#clubs">Coimbra Celas</a>
+              <a href="#clubs">Coimbra Lágrimas</a>
+              <a href="#clubs">Leiria Health Club</a>
+            </div>
+
+            <div class="footer-links-col">
+              <span class="-label-1 col-heading">Studios</span>
+              <a href="#classes">Power Classes</a>
+              <a href="#classes">Flow & Yoga</a>
+              <a href="#classes">Ride Cycling</a>
+              <a href="#classes">Aqua & Swimming</a>
+              <a href="#classes">Moves & Dance</a>
+            </div>
+
+            <div class="footer-links-col span-3">
+              <span class="-label-1 col-heading">Hub & Services</span>
+              <a href="#fitness-hub">Phive Coach™</a>
+              <a href="#fitness-hub">Phive Physio™</a>
+              <a href="#fitness-hub">Phive Nutri™</a>
+              <a href="#fitness-hub">Phive Pilates™</a>
+              <a href="#timetable">Live Timetable</a>
+            </div>
+          </div>
+
+          <div class="footer-watermark">PHIVE</div>
+
+          <div class="footer-bottom">
+            <div>© 2025 Phive Health Clubs. All rights reserved.</div>
+            <div>
+              Made with precision <span class="buro-credit">♥ BY BÜRO: BUROCRATIK.COM</span>
+            </div>
+            <div style="display: flex; gap: 16px;">
+              <a href="#" style="color: inherit;">Privacy Policy</a>
+              <a href="#" style="color: inherit;">Terms of Service</a>
+              <a href="#" style="color: inherit;">Livro de Reclamações</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- SCHEDULE A VISIT MODAL DRAWER -->
+    <div id="schedule-modal" class="modal-overlay">
+      <div class="modal-drawer">
+        <div class="modal-header">
+          <div>
+            <span class="-label-1" style="color: var(--color-yellow);">VIP Pass</span>
+            <h3 class="-title-4" style="color: var(--color-white);">Schedule a Visit</h3>
+          </div>
+          <button id="close-modal-btn" class="close-modal-btn" aria-label="Close Modal">&times;</button>
+        </div>
+
+        <p class="-body-1" style="color: rgba(243, 239, 215, 0.7);">
+          Experience the Phive atmosphere first-hand. Enjoy a guided club tour, meet our trainers, and receive a personalized fitness consultation.
+        </p>
+
+        <form id="visit-form" style="display: flex; flex-direction: column; gap: 18px;">
+          <div class="form-group">
+            <label class="form-label" for="club-select">Select Club Location *</label>
+            <select id="club-select" class="form-select" required>
+              <option value="lisbon">Club 5 de Outubro (Lisbon)</option>
+              <option value="porto">Club Boavista (Porto)</option>
+              <option value="celas">Club Coimbra Celas</option>
+              <option value="lagrimas">Club Coimbra Lágrimas</option>
+              <option value="leiria">Club Leiria</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="visit-date">Preferred Date *</label>
+            <input type="date" id="visit-date" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="visit-time">Preferred Time Slot *</label>
+            <select id="visit-time" class="form-select" required>
+              <option value="morning">Morning (07:00 - 12:00)</option>
+              <option value="afternoon">Afternoon (12:00 - 17:00)</option>
+              <option value="evening">Evening (17:00 - 21:00)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label class="form-label" for="first-name">First Name *</label>
+              <input type="text" id="first-name" class="form-input" placeholder="Maria" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last-name">Last Name *</label>
+              <input type="text" id="last-name" class="form-input" placeholder="Silva" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address *</label>
+            <input type="email" id="email" class="form-input" placeholder="maria.silva@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number *</label>
+            <input type="tel" id="phone" class="form-input" placeholder="+351 912 345 678" required />
+          </div>
+
+          <button type="submit" class="btn-round yellow" style="width: 100%; margin-top: 10px;">
+            Confirm VIP Visit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
