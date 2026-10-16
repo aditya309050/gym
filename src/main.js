@@ -16,6 +16,16 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+// Support programmatic URL scroll parameter for visual inspection
+const params = new URLSearchParams(window.location.search);
+const scrollToY = params.get('scrollTo');
+if (scrollToY) {
+  setTimeout(() => {
+    window.scrollTo(0, parseInt(scrollToY, 10));
+    lenis.scrollTo(parseInt(scrollToY, 10), { immediate: true });
+  }, 150);
+}
+
 // ==========================================================================
 // 2. PHIVE CUSTOM CURSOR
 // ==========================================================================
@@ -39,7 +49,7 @@ function animateCursor() {
 animateCursor();
 
 function initHoverElements() {
-  const hoverables = document.querySelectorAll('button, a, .club, [data-component="button-round-variable"], [data-component="content-button"], [data-component="variable-label"]');
+  const hoverables = document.querySelectorAll('button, a, .club, .card, [data-component="button-round-variable"], [data-component="content-button"], [data-component="variable-label"], .phive-pill-bar, .schedule-visit-btn');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => cursor?.classList.add('hover'));
     el.addEventListener('mouseleave', () => cursor?.classList.remove('hover'));
@@ -51,42 +61,52 @@ initHoverElements();
 // 3. SOUND CONTROLLER (Persistent Phive Ambient Audio)
 // ==========================================================================
 const audio = document.getElementById('ambient-audio');
-const soundBtn = document.querySelector('[data-component="sound-btn"], .sound-btn');
+const soundBtns = document.querySelectorAll('[data-component="sound-btn"], .sound-btn');
 let isAudioPlaying = false;
 
-if (soundBtn && audio) {
+if (audio) {
   audio.volume = 0.4;
 
-  soundBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (isAudioPlaying) {
-      audio.pause();
-      isAudioPlaying = false;
-      soundBtn.removeAttribute('data-active');
-      soundBtn.classList.remove('playing');
-    } else {
-      audio.play().then(() => {
-        isAudioPlaying = true;
-        soundBtn.setAttribute('data-active', 'true');
-        soundBtn.classList.add('playing');
-      }).catch(err => {
-        console.warn('Audio play restricted:', err);
-      });
-    }
+  soundBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (isAudioPlaying) {
+        audio.pause();
+        isAudioPlaying = false;
+        soundBtns.forEach(b => {
+          b.removeAttribute('data-active');
+          b.classList.remove('playing');
+        });
+      } else {
+        audio.play().then(() => {
+          isAudioPlaying = true;
+          soundBtns.forEach(b => {
+            b.setAttribute('data-active', 'true');
+            b.classList.add('playing');
+          });
+        }).catch(err => {
+          console.warn('Audio play restricted:', err);
+        });
+      }
+    });
   });
 }
 
 // ==========================================================================
 // 4. MENU GRID DRAWER (Fullscreen Navigation)
 // ==========================================================================
-const burgerBtn = document.querySelector('[data-component="burger"], .burger-btn');
+const burgerBtns = document.querySelectorAll('[data-component="burger"], .burger-btn');
 const menuGrid = document.querySelector('[data-component="menu-grid"]');
-const closeBtn = document.querySelector('.close-btn');
+const closeBtns = document.querySelectorAll('.close-btn, .close-hitarea');
 
 function openMenu() {
   if (menuGrid) {
     menuGrid.setAttribute('data-state', 'active');
-    burgerBtn?.setAttribute('data-state', 'active');
+    menuGrid.setAttribute('data-open', 'true');
+    menuGrid.style.transform = 'translateY(0)';
+    menuGrid.style.pointerEvents = 'auto';
+    burgerBtns.forEach(b => b.setAttribute('data-state', 'active'));
     document.body.style.overflow = 'hidden';
   }
 }
@@ -94,21 +114,30 @@ function openMenu() {
 function closeMenu() {
   if (menuGrid) {
     menuGrid.setAttribute('data-state', 'inactive');
-    burgerBtn?.removeAttribute('data-state');
+    menuGrid.removeAttribute('data-open');
+    menuGrid.style.transform = 'translateY(-100%)';
+    menuGrid.style.pointerEvents = 'none';
+    burgerBtns.forEach(b => b.removeAttribute('data-state'));
     document.body.style.overflow = '';
   }
 }
 
-burgerBtn?.addEventListener('click', (e) => {
-  e.preventDefault();
-  const isActive = menuGrid?.getAttribute('data-state') === 'active';
-  if (isActive) closeMenu();
-  else openMenu();
+burgerBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isActive = menuGrid?.getAttribute('data-state') === 'active';
+    if (isActive) closeMenu();
+    else openMenu();
+  });
 });
 
-closeBtn?.addEventListener('click', (e) => {
-  e.preventDefault();
-  closeMenu();
+closeBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu();
+    closeVisitModal();
+  });
 });
 
 // Menu links click navigation
@@ -119,23 +148,40 @@ document.querySelectorAll('[data-component="menu-grid"] a').forEach(link => {
 });
 
 // ==========================================================================
-// 5. INTERACTIVE CLUBS CAROUSEL & TABS
+// 5. SCHEDULE A VISIT MODAL DRAWER
 // ==========================================================================
-const clubCards = document.querySelectorAll('[data-component="clubs-cards"] .club');
+const modalDrawer = document.querySelector('[data-component="modal-drawer"]');
 
-clubCards.forEach((card, idx) => {
-  card.addEventListener('click', () => {
-    clubCards.forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-  });
+function openVisitModal() {
+  if (modalDrawer) {
+    modalDrawer.setAttribute('data-state', 'active');
+    modalDrawer.style.visibility = 'visible';
+    modalDrawer.style.opacity = '1';
+    modalDrawer.style.pointerEvents = 'auto';
+    document.body.style.overflow = 'hidden';
+  }
+}
 
-  card.addEventListener('mouseenter', () => {
-    card.querySelector('[data-component="variable-label"]')?.setAttribute('data-hover', 'true');
-  });
-  card.addEventListener('mouseleave', () => {
-    card.querySelector('[data-component="variable-label"]')?.removeAttribute('data-hover');
+function closeVisitModal() {
+  if (modalDrawer) {
+    modalDrawer.setAttribute('data-state', 'inactive');
+    modalDrawer.style.visibility = 'hidden';
+    modalDrawer.style.opacity = '0';
+    modalDrawer.style.pointerEvents = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+document.querySelectorAll('[aria-label="Schedule a visit"], [data-component="content-button"], .schedule-visit-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openVisitModal();
   });
 });
+
+modalDrawer?.querySelector('.close-btn')?.addEventListener('click', closeVisitModal);
+modalDrawer?.querySelector('.close-hitarea')?.addEventListener('click', closeVisitModal);
 
 // ==========================================================================
 // 6. VARIABLE LABELS HOVER INTERPOLATION
@@ -146,44 +192,13 @@ document.querySelectorAll('[data-component="variable-label"]').forEach(label => 
 });
 
 // ==========================================================================
-// 7. SCHEDULE A VISIT MODAL DRAWER
-// ==========================================================================
-const modalDrawer = document.querySelector('[data-component="modal-drawer"]');
-
-function openVisitModal() {
-  if (modalDrawer) {
-    modalDrawer.setAttribute('data-state', 'active');
-    document.body.style.overflow = 'hidden';
-  } else {
-    alert("Welcome to Phive!\n\nSchedule a VIP visit to discover our clubs in Lisbon, Porto, Coimbra, and Leiria.");
-  }
-}
-
-function closeVisitModal() {
-  if (modalDrawer) {
-    modalDrawer.setAttribute('data-state', 'inactive');
-    document.body.style.overflow = '';
-  }
-}
-
-document.querySelectorAll('[aria-label="Schedule a visit"], [data-component="content-button"]').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openVisitModal();
-  });
-});
-
-modalDrawer?.querySelector('.close-btn')?.addEventListener('click', closeVisitModal);
-
-// ==========================================================================
-// 8. AUTOPLAY VIDEOS ENSURANCE
+// 7. AUTOPLAY VIDEOS ENSURANCE
 // ==========================================================================
 document.querySelectorAll('video').forEach(vid => {
   vid.muted = true;
   vid.play().catch(() => {
-    // Autoplay policy bypass
     window.addEventListener('click', () => vid.play(), { once: true });
   });
 });
 
-console.log('Phive official experience initialized.');
+console.log('Phive official experience fully initialized.');
