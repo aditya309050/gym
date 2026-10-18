@@ -149,8 +149,28 @@ document.querySelectorAll('[data-component="menu-grid"] a').forEach(link => {
 });
 
 // ==========================================================================
-// 5. SCHEDULE A VISIT MODAL DRAWER
+// 5. WHATSAPP & SCHEDULE A VISIT INTEGRATION
 // ==========================================================================
+/**
+ * WhatsApp Configuration
+ * Phone number format: Country code + Number without '+' or leading zeros or spaces
+ * Default: Portugal Phive (+351 912 345 678 -> '351912345678')
+ */
+export const WHATSAPP_CONFIG = {
+  phoneNumber: '351912345678',
+  defaultMessage: 'Hello Phive! I would like to schedule a VIP visit to the club.'
+};
+
+export function getWhatsAppUrl(customMessage) {
+  const message = customMessage || WHATSAPP_CONFIG.defaultMessage;
+  return `https://wa.me/${WHATSAPP_CONFIG.phoneNumber}?text=${encodeURIComponent(message)}`;
+}
+
+export function openWhatsApp(customMessage) {
+  const url = getWhatsAppUrl(customMessage);
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
 const modalDrawer = document.querySelector('[data-component="modal-drawer"]');
 
 function openVisitModal() {
@@ -173,16 +193,38 @@ function closeVisitModal() {
   }
 }
 
+// Direct WhatsApp redirection on clicking "SCHEDULE A VISIT"
 document.querySelectorAll('[aria-label="Schedule a visit"], [data-component="content-button"], .schedule-visit-btn').forEach(btn => {
+  if (btn.tagName.toLowerCase() === 'a') {
+    btn.setAttribute('href', getWhatsAppUrl());
+    btn.setAttribute('target', '_blank');
+    btn.setAttribute('rel', 'noopener noreferrer');
+  }
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    openVisitModal();
+    openWhatsApp();
   });
 });
 
 modalDrawer?.querySelector('.close-btn')?.addEventListener('click', closeVisitModal);
 modalDrawer?.querySelector('.close-hitarea')?.addEventListener('click', closeVisitModal);
+
+// Modal form integration: also send via WhatsApp on submit if used
+const visitForm = modalDrawer?.querySelector('form');
+if (visitForm) {
+  visitForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nameInput = visitForm.querySelector('input[type="text"]')?.value || '';
+    const emailInput = visitForm.querySelector('input[type="email"]')?.value || '';
+    const phoneInput = visitForm.querySelector('input[type="tel"]')?.value || '';
+    const clubSelect = visitForm.querySelector('select')?.selectedOptions[0]?.text || '';
+
+    const customMsg = `Hello Phive! I would like to schedule a VIP visit.\nName: ${nameInput}\nPhone: ${phoneInput}\nEmail: ${emailInput}\nClub: ${clubSelect}`;
+    closeVisitModal();
+    openWhatsApp(customMsg);
+  });
+}
 
 // ==========================================================================
 // 6. VARIABLE LABELS HOVER INTERPOLATION

@@ -1,0 +1,455 @@
+[
+  {
+    "_key": "b56c687adb56",
+    "_type": "block.homeHeader",
+    "classes": null,
+    "highlights": [
+      {
+        "_key": "d1a277791661",
+        "_type": "item",
+        "background": [
+          {
+            "_key": "e33741f224b2",
+            "_type": "imageAsset",
+            "asset": {
+              "_ref": "image-fef3de1608bf2c774cd5e4dd3ac9523006b8f65f-7008x4672-jpg",
+              "_type": "reference"
+            }
+          }
+        ],
+        "contentBackground": [
+          {
+            "_key": "a8e004c479a7",
+            "_type": "videoAsset",
+            "options": {
+              "muted": true
+            },
+            "sources": [
+              {
+                "_key": "09df7a1cc78e",
+                "source": {
+                  "_type": "digital-ocean-files.media",
+                  "asset": {
+                    "_ref": "W8csdEAed6ZtZ9BcJqWD7g",
+                    "_type": "reference"
+                  }
+                }
+              },
+              {
+                "_key": "e4051aa6f9bd",
+                "source": {
+                  "_type": "digital-ocean-files.media",
+                  "asset": {
+                    "_ref": "FvYw86A80MD4kswGNye75Y",
+                    "_type": "reference"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "richText": [
+          {
+            "_key": "81be661db417",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "398a3924a06f0",
+                "_type": "span",
+                "marks": [],
+                "text": "from 06:30am to 10pm"
+              }
+            ],
+            "style": "h3"
+          },
+          {
+            "_key": "f37ee16ee5c5",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "3f94f2db41e80",
+                "_type": "span",
+                "marks": [],
+                "text": "train every day"
+              }
+            ],
+            "style": "h2"
+          },
+          {
+            "_key": "4bed264eb0f8",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "9c7b7807703b0",
+                "_type": "span",
+                "marks": [],
+                "text": "On your Phive Club"
+              }
+            ],
+            "style": "normal"
+          },
+          {
+            "_key": "0e76f22371c1",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "4cdb766abb0b",
+                "_type": "span",
+                "marks": [],
+                "text": ""
+              },
+              {
+                "_key": "d2afcbc83c08",
+                "_type": "cta",
+                "label": "Sign up",
+                "link": [
+                  {
+                    "_key": "2c3b1f999f3e",
+                    "_type": "external",
+                    "url": "https://join.phive.pt/en"
+                  }
+                ]
+              },
+              {
+                "_key": "58d774c6af29",
+                "_type": "span",
+                "marks": [],
+                "text": ""
+              }
+            ],
+            "style": "normal"
+          }
+        ],
+        "subtitle": "Coimbra, Leiria, Lisbon and Porto",
+        "title": "Train every day"
+      }
+    ],
+    "internalName": "Header",
+    "title": null
+  },
+  {
+    "_key": "77d975052bb2",
+    "_type": "block.phiveClubs",
+    "classes": null,
+    "ctaList": [
+      {
+        "_key": "02a7f9441404",
+        "_type": "cta",
+        "label": "View all Clubs",
+        "link": [
+          {
+            "_key": "3f214566c419",
+            "_ref": "cd832834-5f8f-408f-8c4c-77a297ea0532",
+            "_type": "page"
+          }
+        ]
+      },
+      {
+        "_key": "9a0e7ccfd14e",
+        "_type": "cta",
+        "label": "Schedule a visit",
+        "link": [
+          {
+            "_key": "b53dcd70d531",
+            "_ref": "0652fc36-6c02-48e8-a5ff-6b1833d1e361",
+            "_type": "form"
+          }
+        ]
+      }
+    ],
+    "ctaSubtitle": "Choose your club",
+    "ctaTitle": "Phive",
+    "internalName": "Clubs",
+    "overview": {
+      "list": [
+        "Heated Indoor Swimming Pool",
+        "Sauna, Turkish Bath and Jacuzzi",
+        "Weight and cardio room",
+        "Private Pilates Studio",
+        "Group Classes"
+      ],
+      "title": "What you can find at Phive Clubs"
+    },
+    "photoGrid": [
+      {
+        "_key": "c1ffbf20ee32",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-550b49b63efe93865b4c981ae3cf1149babfcc49-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "8a4ba4a11f24",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-2a5f62c425a3bf9db63494e252b1fe832c7d2d24-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "fac2839bf659",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-c8688ada74f8a65dd3c57e5e7a5b607a0d3927b0-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "dc54afb383c4",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-52ea3b76ea71cb07916dd5d12a0cca387d927895-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "5133394f0c19",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-d23e940591d8a663dd0db227850490d1dd1837d0-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "642e292c94a7",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-f09943c498083e7549f4cfbe40293f46be4663cd-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "de0f639193bb",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-2fbf951486c3b5466c4ced8dbedc0ef46808904d-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "72c0c3e6143c",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-123fbf32f99498214d0c2682bc7267d754443154-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "bf0d891e0a1c",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-2001bf72cc7e5b1bd6673d6c1b09f3a9659fb4c7-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "ad288482de19",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-b11ea36996043756b2d7d0f58ba10cbaf8ecc007-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "3bec9bc22c16",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-aa3b5d7b6c530bfbda45f0433974f27b4ef71b57-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "73d4a991c843",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-8c37051ad0dbdb544af64e9927abbf448eabb6c1-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "64810484661a",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-8d93c07f1b8620c6edebbf078d73e702c3b7ad5b-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "e3cccf486ce5",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-57cf8809de59e8967ff718c1d5f89006c03db07b-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "28b8805d714c",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-9875c91a0ffcc1d000024f42455deb4552f8aba0-480x690-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "a8d9c22673bb",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-9e855999c6da59608bfc0d5117738223ccc16a82-480x690-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "tagline": {
+      "_type": "animation",
+      "fallbackImage": {
+        "_type": "imageAsset",
+        "alt": "Activa os teus sentidos. Supera-te!",
+        "asset": {
+          "_ref": "image-ccb45f2ad230e1248901f76d4ac20a597dc5a40f-3400x1998-png",
+          "_type": "reference"
+        }
+      },
+      "file": {
+        "_type": "file",
+        "asset": {
+          "_ref": "file-91e98a2b5bcce5f5464255993629e4ed81d6d255-riv",
+          "_type": "reference"
+        }
+      }
+    },
+    "title": "Phive has clubs located in Coimbra, Leiria, Lisbon, and Porto. Get to know each one!"
+  },
+  {
+    "_key": "3ae1d53beeda",
+    "_type": "block.boldTypography",
+    "background": [
+      {
+        "_key": "813c7a4281ed",
+        "_type": "videoAsset",
+        "options": {
+          "muted": true
+        },
+        "sources": [
+          {
+            "_key": "c33449e48716",
+            "source": {
+              "_type": "digital-ocean-files.media",
+              "asset": {
+                "_ref": "4uvkpNgxcl1THkIzTOtfWQ",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "_key": "0e2e396158fe",
+            "source": {
+              "_type": "digital-ocean-files.media",
+              "asset": {
+                "_ref": "pdGWUeYya1HgWuKtPzXdOy",
+                "_type": "reference"
+              }
+            }
+          },
+          {
+            "_key": "59327fd7b303",
+            "source": {
+              "_type": "digital-ocean-files.media",
+              "asset": {
+                "_ref": "2e4JFsGXCaPaASqwsH1ukW",
+                "_type": "reference"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "classes": null,
+    "firstWord": "Fitness",
+    "internalName": "Bold Typography",
+    "parallaxElements": [
+      {
+        "_key": "ff2b43bce452",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-303f265139d05b7f61c945f5dd59d3253a73a967-989x871-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "7d002e6c04ce",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-6737e9eed12270eb54c51763ee6b18f3c1c8528a-318x579-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "4792f07661c7",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-036d41b31b64361b4a6e75ae941a46f42de97504-828x789-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "8ef6e75abb09",
+        "_type": "imageAsset",
+        "asset": {
+          "_ref": "image-3c351bd0567ba4cea52faa5981aa7d58c24e7c3d-212x663-png",
+          "_type": "reference"
+        }
+      }
+    ],
+    "secondWord": "Strong",
+    "title": null
+  },
+  {
+    "_key": "6e5b3ada4fea",
+    "_type": "block.classesShowcase",
+    "classes": null,
+    "description": "The most exciting classes, created by top instructors. No matter your goal, we can make it happen.",
+    "internalName": "Classes",
+    "title": "Classes"
+  },
+  {
+    "_key": "e0afb91e49e1",
+    "_type": "block.phiveApp",
+    "backgroundImage": {
+      "_type": "imageAsset",
+      "alt": "Download our App now",
+      "asset": {
+        "_ref": "image-86f4a7f34ca994b0cf0d55300d793f22dde4485a-3400x2150-jpg",
+        "_type": "reference"
+      }
+    },
+    "classes": null,
+    "ctaList": [
+      {
+        "_key": "d7da427a21da",
+        "_type": "cta",
+        "link": [
+          {
+            "_key": "0071609e14d7",
+            "_ref": "e211222b-d186-45c5-afe1-f8f636eead23",
+            "_type": "app"
+          }
+        ]
+      },
+      {
+        "_key": "e46cb6e28854",
+        "_type": "cta",
+        "link": [
+          {
+            "_key": "258afc034866",
+            "_ref": "b7efd7e4-4d29-4713-8490-5bd1fd140671",
+            "_type": "app"
+          }
+        ]
+      }
+    ],
+    "description": "Schedule and manage your classes,\naccess your training plan, book appointments, \nand much more!",
+    "internalName": "App Hero",
+    "title": "Phive App"
+  }
+]
